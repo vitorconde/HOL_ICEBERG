@@ -74,9 +74,9 @@ Procure por "Create a new project"
 ![CAI](img/cai00.png)
 
 Agora configure o novo projeto, vamos utilizar nosso projeto no github como referência:
-Project Name: `HOL Solr`
+Project Name: `Demo Iceberg`
 Project Description: `Utilização de Solar para Index de documentos`
-GitHub: `https://github.com/vitorconde/HOL_SOLR`
+GitHub: `https://github.com/vitorconde/HOL_ICEBERG`
 ![CAI](img/cai01.png)
 
 Como não utilizaremos GPU, vamos deixar nossa escolha de IDE mais direcionada para nosso projeto.
