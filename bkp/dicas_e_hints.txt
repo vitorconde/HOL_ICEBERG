@@ -1,0 +1,44 @@
+Lista de Usuários e Labs: https://docs.google.com/spreadsheets/d/1TwPis6k4x4Fb6FMZipsldUCIo164GJmLRWBvPnoTuwY/edit?usp=sharing
+
+Dicas e Hints...
+
+Verificar o Spark e Iceberg que estamos utilizando:
+spark_code = """
+print("Spark version:", spark.version)
+print("Iceberg version:", spark._jvm.org.apache.iceberg.IcebergBuild.fullVersion())
+"""
+
+submit_statement(livy_session_id, spark_code)
+
+
+08 rewrite_data_files / expire_snapshots
+11 DML direto no Impala
+Atenção importante
+
+Para UPDATE, DELETE e MERGE, garanta que a tabela esteja em Iceberg format-version 2, porque operações de row-level DML dependem de recursos de V2 em muitas engines.
+
+Na criação das tabelas, eu adicionaria:
+
+TBLPROPERTIES (
+  'format-version' = '2',
+  'write.format.default' = 'parquet',
+  'write.delete.format.default' = 'parquet'
+)
+
+No Spark:
+
+spark.sql("""
+CREATE TABLE iceberg_prod.governo_mg.beneficios (
+    id_cidadao BIGINT,
+    nome STRING,
+    valor_beneficio DOUBLE,
+    data_pagamento DATE,
+    status STRING
+)
+USING iceberg
+TBLPROPERTIES (
+    'format-version' = '2',
+    'write.format.default' = 'parquet',
+    'write.delete.format.default' = 'parquet'
+)
+""")
