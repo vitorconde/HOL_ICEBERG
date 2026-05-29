@@ -42,11 +42,67 @@ Essa etapa é útil para:
 - Os notebooks em Python executam o fluxo principal de Spark/Iceberg via Livy3.
 - Os arquivos `.md` em `Impala_e_HUE/` e na raiz complementam a demo com consultas e validações usando Impala/Hive.
 
-## Como seguir a demo
+## Primeiros passos no Cloudera Data Services - CAI
 
-1. Abra os notebooks e execute o fluxo principal de carga e operações no Spark/Iceberg.
-2. Após as cargas, use a camada Impala/Hive para consultas e validações.
-3. Consulte os arquivos de apoio no repositório para seguir cada etapa com exemplos práticos.
+### Login
+Pegue o link que o instrutor passou para vocês para realizar o login na plataforma, assim como o usuário e senha de cada um.
+`user<xxx>` 
+![Login Data Services](img/login00.png)
+
+Após realizar o login uma tela deve aparecer com todos os serviços do Cloudera Data Services:
+Procure por *Cloudera AI*
+![Login Data Services](img/login01.png)
+
+Já em Cloudera AI você deverá ver a tela de home da plataforma:
+![Login CAI](img/login02.png)
+- Verificar Modelos da NVidia (IA Generativa)
+- Registar modelos de IA Generativa em endpoints
+- Podemos gerenciar aplicações
+- Registrar e gerenciar modelos NVidia e externos (IA Generativa)
+- Criar Workbenchs por times ou projetos
+- Criar, gerenciar e configurar o serviço de Inferência
+- Criar backups de Workbenchs
+
+Agora acesse o workbench que está disponível para você:
+![Login CAI](img/login03.png)
+
+**Já estamos prontos para começar nosso projeto!!**
+
+### Clonando Template/Projeto para Workbench
+
+Procure por "Create a new project"
+![CAI](img/cai00.png)
+
+Agora configure o novo projeto, vamos utilizar nosso projeto no github como referência:
+Project Name: `HOL Solr`
+Project Description: `Utilização de Solar para Index de documentos`
+GitHub: `https://github.com/vitorconde/HOL_SOLR`
+![CAI](img/cai01.png)
+
+Como não utilizaremos GPU, vamos deixar nossa escolha de IDE mais direcionada para nosso projeto.
+*Podemos clicar em Create Project assim que terminado de configurar*
+![CAI](img/cai02.png)
+
+Depois de criar o projeto, você poderá ver as pastas e arquivos deste repositório que foi clonado diretamente do github.
+*Clique em Files*
+*Podemos então avançar para criar uma sessão de processamento para nosso projeto - Clique em New Session*
+![CAI](img/cai03.png)
+
+Session Name: `sess-user<xxx>`
+*Selecione JupyterLab*
+![CAI](img/cai04.png)
+
+Tela de carregamento do POD para sua sessão:
+![CAI](img/cai05.png)
+
+Após carregar, você verá uma tela assim:
+![CAI](img/cai06.png)
+*Pode clicar em Close ou no x*
+
+Então você poderá iniciar os labs, todos os arquivos e pastas devem estar na aba ao lado esquerdo.
+![CAI](img/cai07.png)
+
+Boa jornada!
 
 ## Banco e tabelas usadas
 
